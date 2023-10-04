@@ -17,6 +17,7 @@ def sum_up(val1: str, val2: str):
         return
     print(f"Numbers sum is: {int(val1) + int(val2)}")
 
-while True:
-    print("Enter 2 numbers to sum up:")
-    sum_up(input("Enter first number: "), input("Enter second number: "))
+if __name__ == "__main__":
+    while True:
+        print("Enter 2 numbers to sum up:")
+        sum_up(input("Enter first number: "), input("Enter second number: "))
