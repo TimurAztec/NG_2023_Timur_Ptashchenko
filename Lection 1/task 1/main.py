@@ -1,1 +1,2 @@
-print("Tymur Ptashchenko")
+print("Tymur")
+print("Ptashchenko")
