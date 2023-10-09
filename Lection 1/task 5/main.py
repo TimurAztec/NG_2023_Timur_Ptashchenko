@@ -9,10 +9,8 @@ if D >= 0:
     x1 = (-b + cmath.sqrt(D)) / (2*a)
     x2 = (-b - cmath.sqrt(D)) / (2*a)
 else:
-    i = -b / (2*a)
-    j = cmath.sqrt(-D) / (2*a)
-    x1 = complex(i, j)
-    x2 = complex(i, -j)
+    x1 = complex(-b / (2*a), cmath.sqrt(-D) / (2*a))
+    x2 = complex(-b / (2*a), -cmath.sqrt(-D) / (2*a))
 
 print("Root 1:", x1)
 print("Root 2:", x2)
