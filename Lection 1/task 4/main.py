@@ -19,3 +19,5 @@ match action:
         print(f"Answer {math.sqrt(num1)}")
     case "^":
         print(f"Answer {num1**num2}")
+    case _:
+        print("Wrong action or numbers!")
