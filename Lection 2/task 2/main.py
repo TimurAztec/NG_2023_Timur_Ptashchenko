@@ -1,6 +1,6 @@
-def is_int_convertable(val):
+def is_float_convertable(val):
     try:
-        int(val)
+        float(val)
     except ValueError:
         return False
     else:
@@ -15,7 +15,7 @@ while True:
 
 count = 0
 for item in elements:
-    if is_int_convertable(item):
+    if is_float_convertable(item):
         count += 1
 
 print(f"Number of numbers in list: {count} | {elements}")
