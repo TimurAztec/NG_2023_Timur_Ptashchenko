@@ -6,18 +6,23 @@ if (action == "sqrt"):
 else:
     num1 = int(input("Enter first number: "))
     num2 = int(input("Enter second number: "))
+
+answer = None
 match action:
     case "+":
-        print(f"Answer {num1 + num2}")
+        answer = num1 + num2
     case "-":
-        print(f"Answer {num1 - num2}")
+        answer = num1 - num2
     case "*":
-        print(f"Answer {num1 * num2}")
+        answer = num1 * num2
     case "/":
-        print(f"Answer {num1 / num2}")
+        answer = num1 / num2
     case "sqrt":
-        print(f"Answer {math.sqrt(num1)}")
+        answer = math.sqrt(num1)
     case "^":
-        print(f"Answer {num1**num2}")
-    case _:
-        print("Wrong action or numbers!")
+        answer = num1**num2
+
+if answer:
+    print(f"Answer: {answer}")
+else:
+    print("Wrong action or numbers!")
