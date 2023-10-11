@@ -1,7 +1,7 @@
 vowels = ["A", "E", "I", "O", "U"]
 string = input("Please enter your prompt in English: \n")
-for i, let in enumerate(string):
-    if not let.upper() in vowels:
-        string = string[:i] + " " + string[i + 1:]
+for letter_index, letter in enumerate(string):
+    if not letter.upper() in vowels:
+        string = string[:letter_index] + " " + string[letter_index + 1:]
 
 print(string)
