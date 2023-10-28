@@ -1,19 +1,17 @@
 import json
-import psutil
 import platform
 import socket
+import os
 
 system_info = {
     "OS": platform.system(),
-    "OS Version": platform.version(),
+    "OS Version": platform.uname().release,
     "Machine": platform.machine(),
     "CPU": platform.processor(),
     "Hostname": socket.gethostname(),
     "IP Address": socket.gethostbyname(socket.gethostname()),
-    "CPU Cores": psutil.cpu_count(logical=False),
-    "CPU Usage": psutil.cpu_percent(interval=1, percpu=True),
-    "Total Memory": psutil.virtual_memory().total,
-    "Available Memory": psutil.virtual_memory().available
+    "CPU Cores": len(os.sched_getaffinity(0)),
+    "Total Memory": os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES'),
 }
 
 print(json.dumps(system_info, indent=4))
