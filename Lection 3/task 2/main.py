@@ -10,7 +10,7 @@ system_info = {
     "CPU": platform.processor(),
     "Hostname": socket.gethostname(),
     "IP Address": socket.gethostbyname(socket.gethostname()),
-    "CPU Cores": len(os.sched_getaffinity(0)),
+    "CPU Cores": os.cpu_count(),
     "Total Memory": os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES'),
 }
 
