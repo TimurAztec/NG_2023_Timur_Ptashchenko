@@ -2,6 +2,7 @@ import json
 import platform
 import socket
 import os
+import psutil
 
 system_info = {
     "OS": platform.system(),
@@ -11,7 +12,7 @@ system_info = {
     "Hostname": socket.gethostname(),
     "IP Address": socket.gethostbyname(socket.gethostname()),
     "CPU Cores": os.cpu_count(),
-    "Total Memory": os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES'),
+    "Total Memory": psutil.virtual_memory().total,
 }
 
 print(json.dumps(system_info, indent=4))
