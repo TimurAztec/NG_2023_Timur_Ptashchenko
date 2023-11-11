@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery</title>
+    </head>
+    <body>
+        <div id="map">
+            <img src="{{ img }}" alt="{{ img }}">
+        </div>
+        <div>
+            <form method="GET" action="/img/{{ prev }}">
+                <button type="submit" name="direction">Previous &#8592;</button>
+            </form>
+            <form method="GET" action="/img/{{ next }}">
+                <button type="submit" name="direction">Next &#8594;</button>
+            </form>
+        </div>
+    </body>
+    <style>
+        
+    </style>
+</html>
