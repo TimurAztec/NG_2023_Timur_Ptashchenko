@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="/output" method="POST">
+            <input type="text" name="value_a" placeholder="Enter value a">
+            <br/>
+            <div>
+                <span><input type="radio" id="action_sum" name="action" value="+"><label for="action_sum">Add numbers: +</label></span>
+                <span><input type="radio" id="action_sub" name="action" value="-"><label for="action_sub">Substract numbers: -</label></span>
+                <span><input type="radio" id="action_mult" name="action" value="*"><label for="action_mult">Multiply numbers: *</label></span>
+                <span><input type="radio" id="action_div" name="action" value="/"><label for="action_div">Divide numbers: /</label></span>
+            </div>
+            <br/>
+            <input type="text" name="value_b" placeholder="Enter value b">
+            <br/>
+            <button type="submit">Calculate</button>
+        </form>
+    </body>
+    <style>
+        button {
+            background-color: #0be3e3;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 15%;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+    </style>
+</html>
