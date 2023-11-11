@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cataclysm C# Days Ahead</title>
+    </head>
+    <body>
+        <div id="map">
+            <table>
+                {% for row in map %}
+                    <tr>
+                        {% for cell in row %}
+                            <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div>
+            <form method="POST" action="/move">
+                <button type="submit" name="direction" value="up">&#8593;</button>
+                <br>
+                <button type="submit" name="direction" value="left">&#8592;</button>
+                <button type="submit" name="direction" value="right">&#8594;</button>
+                <br>
+                <button type="submit" name="direction" value="down">&#8595;</button>
+            </form>
+        </div>
+    </body>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            text-align: center;
+        }
+        button {
+            display: inline-block;
+            font-size: 24px;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        input[type="submit"] {
+            display: none;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</html>
