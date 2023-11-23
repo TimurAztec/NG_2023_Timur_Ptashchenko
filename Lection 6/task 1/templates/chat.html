@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+    </head>
+    <body>
+        <h2>Chat</h2>
+        <div>
+            <div>
+                {% for message in messages %}
+                    <div>
+                        <p><strong>{{ message.username }} | {{ message.userId }}</strong>: {{ message.message }}</p>
+                        <p style="font-size: 12px;">{{ message.messageDate }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <form action="/send" method="post">
+                <input id="inputText" type="text" name="message" placeholder="Type your message..." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <script>
+            let inputElement = document.getElementById('inputText');
+            inputElement.value = sessionStorage.getItem('inputText') || '';
+            inputElement.addEventListener('input', () => {
+                sessionStorage.setItem('inputText', inputElement.value);
+            });
+            setTimeout(() => {
+                location.reload(true)
+            }, 5000);
+        </script>
+    </body>
+    <style>
+        
+    </style>
+</html>
